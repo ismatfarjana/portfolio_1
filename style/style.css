@@ -6,6 +6,9 @@ img {
   opacity: 0.7 ;
 }
 
+
+
+
 body {
   font-family: 'Cute Font', cursive;
   font-size: 30px;
@@ -15,15 +18,35 @@ body {
 }
 
 .name h1{
-    text-align: right;
+  
+    text-align: left;
     font-family: Aclonica;
     font-size: 30px;
     padding-top: 50px;
-    padding-right: 20px;
+    padding-left: 20px;
     color: palevioletred;
-    
+    position: relative;
+    transition: background 0.5s ease-in, transform .5s .25s  ease-in-out;
+     perspective: 1000PX; 
+    animation-name: slide;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+     animation-delay: 1s; 
+     animation-iteration-count: 2;
+    animation-fill-mode: both;
+    animation-direction: reverse;
+}
+
+
+.name h1:hover {
+  color: rgba(168, 192, 231, 0.781);
+  transform: scaleX(1.5) rotate(30deg);
+  
+
 
 }
+
+
 
 h1 {
   font-size: 70px;
@@ -45,13 +68,26 @@ a{
   text-align: center;
   margin: 20px 10px;
   padding: 10px ;
+  position: relative;
 }
   .actions a{ 
   background-color: rgba(82, 112, 195, 0.37);
   display: inline-block;
   border: 1px solid white;
   margin-top: 50px;
-  padding: 10px 
+  margin-right: 10px;
+  padding: 5px 10px 5px 10px; 
+  display: inline-block;
+  text-decoration: none;
+  transition: background 0.5s ease-in, transform .35s .25s ease-in-out;
+  /* perspective: 2000px; */
+}
+
+.actions a:hover {
+  background: palevioletred;
+  border: 1px solid palevioletred;
+  color: black;
+  transform: scale(1.5) rotateY(30deg);
 }
 
 .backpic {
@@ -64,10 +100,15 @@ a{
    overflow: scroll; 
 }
 .bannar h1{
-  border: 4px solid rgba(82, 112, 195, 0.438);
+  border: 40px solid rgba(82, 112, 195, 0.438);
   position: relative;
   top: 50px;
   width: 400px;
   margin: 0 auto;
-  color: rgba(238, 22, 227, 0.616)
+  color: rgba(238, 22, 227, 0.616);
+}
+
+@keyframes slide {
+   from{transform: translateX(0px);}
+   to{transform: translateX(900px);}
 }
